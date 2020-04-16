@@ -25,6 +25,15 @@ namespace Demetrios.Controllers
             _MinutoPostService.GetMinutoPostsAndCreate();
         }
 
+        [HttpGet]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public IActionResult GetAll(int? pageNumber, int? pageSize)
+        {
+            var result = _MinutoPostService.GetAll(pageNumber, pageSize);
+
+            return Ok(result);
+        }
+
         [HttpPost("MinutoCreate")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -75,15 +84,6 @@ namespace Demetrios.Controllers
             {
                 return BadRequest(errors);
             }
-        }
-
-        [HttpGet]
-        [ProducesResponseType(StatusCodes.Status200OK)]
-        public IActionResult GetAll(int? pageNumber, int? pageSize)
-        {
-            var result = _MinutoPostService.GetAll(pageNumber, pageSize);
-
-            return Ok(result);
         }
 
         [HttpGet("{id}")]

@@ -118,7 +118,8 @@ namespace Demetrios.Repositories
                     Link = (string)i.Element("link"),
                     Category = i.Descendants("category").ToList(),
                     Encoded = (string)i.Element("{http://purl.org/rss/1.0/modules/content/}encoded"),
-                })
+                }).Skip(0)
+                .Take(10)
                 .ToList();
 
             var success = false;
@@ -131,7 +132,7 @@ namespace Demetrios.Repositories
                 for (int o = 0; o < result[i].Category.Count(); o++)
                 {
                     PrincipaisPalavras categoria = new PrincipaisPalavras();
-                    categoria.descricao = result[i].Category[o].ToString().Replace("<category><![CDATA[","").Replace("]]></category>", "").ToLower();
+                    categoria.descricao = RetiraArtigosPreposicoes(result[i].Category[o].ToString().Replace("<category><![CDATA[","").Replace("]]></category>", ""));
                     categoria.ocorrencias = aux.IndexOf(categoria.descricao.ToLower()) == -1 ? 0 : Regex.Matches(aux, categoria.descricao.ToLower()).Count;
                     listaCategorias.Add(categoria);
                 }
@@ -157,46 +158,46 @@ namespace Demetrios.Repositories
         public string RetiraArtigosPreposicoes(string a)
         {
             return a.ToLower()
-                //a.Replace("A ", " ").Replace(" A ", " ").Replace(" a "," ")
-                //.Replace("As ", " ").Replace(" As ", " ").Replace(" as ", " ")
-                //.Replace("O ", " ").Replace(" O ", " ").Replace(" o ", " ")
-                //.Replace("Os ", " ").Replace(" Os ", " ").Replace(" os ", " ")
-                //.Replace("Um ", " ").Replace(" Um ", " ").Replace(" um ", " ")
-                //.Replace("Uma ", " ").Replace(" Uma ", " ").Replace(" uma ", " ")
-                //.Replace("Uns ", " ").Replace(" Uns ", " ").Replace(" uns ", " ")
-                //.Replace("Umas ", " ").Replace(" Umas ", " ").Replace(" umas ", " ")
+                .Replace("A ", " ").Replace(" A ", " ").Replace(" a ", " ")
+                .Replace("As ", " ").Replace(" As ", " ").Replace(" as ", " ")
+                .Replace("O ", " ").Replace(" O ", " ").Replace(" o ", " ")
+                .Replace("Os ", " ").Replace(" Os ", " ").Replace(" os ", " ")
+                .Replace("Um ", " ").Replace(" Um ", " ").Replace(" um ", " ")
+                .Replace("Uma ", " ").Replace(" Uma ", " ").Replace(" uma ", " ")
+                .Replace("Uns ", " ").Replace(" Uns ", " ").Replace(" uns ", " ")
+                .Replace("Umas ", " ").Replace(" Umas ", " ").Replace(" umas ", " ")
 
-                //.Replace("Ao ", " ").Replace(" Ao ", " ").Replace(" ao ", " ")
-                //.Replace("Aos ", " ").Replace(" Aos ", " ").Replace(" aos ", " ")
-                //.Replace("À ", " ").Replace(" À ", " ").Replace(" à ", " ")
-                //.Replace("Às ", " ").Replace(" Às ", " ").Replace(" às ", " ")
+                .Replace("Ao ", " ").Replace(" Ao ", " ").Replace(" ao ", " ")
+                .Replace("Aos ", " ").Replace(" Aos ", " ").Replace(" aos ", " ")
+                .Replace("À ", " ").Replace(" À ", " ").Replace(" à ", " ")
+                .Replace("Às ", " ").Replace(" Às ", " ").Replace(" às ", " ")
 
-                //.Replace("De ", " ").Replace(" De ", " ").Replace(" de ", " ")
-                //.Replace("Do ", " ").Replace(" Do ", " ").Replace(" do ", " ")
-                //.Replace("Dos ", " ").Replace(" Dos ", " ").Replace(" dos ", " ")
-                //.Replace("Da ", " ").Replace(" Da ", " ").Replace(" da ", " ")
-                //.Replace("Das ", " ").Replace(" Das ", " ").Replace(" das ", " ")
-                //.Replace("Dum ", " ").Replace(" Dum ", " ").Replace(" dum ", " ")
-                //.Replace("Duns ", " ").Replace(" Duns ", " ").Replace(" duns ", " ")
-                //.Replace("Duma ", " ").Replace(" Duma ", " ").Replace(" duma ", " ")
-                //.Replace("Dumas ", " ").Replace(" Dumas ", " ").Replace(" dumas ", " ")
+                .Replace("De ", " ").Replace(" De ", " ").Replace(" de ", " ")
+                .Replace("Do ", " ").Replace(" Do ", " ").Replace(" do ", " ")
+                .Replace("Dos ", " ").Replace(" Dos ", " ").Replace(" dos ", " ")
+                .Replace("Da ", " ").Replace(" Da ", " ").Replace(" da ", " ")
+                .Replace("Das ", " ").Replace(" Das ", " ").Replace(" das ", " ")
+                .Replace("Dum ", " ").Replace(" Dum ", " ").Replace(" dum ", " ")
+                .Replace("Duns ", " ").Replace(" Duns ", " ").Replace(" duns ", " ")
+                .Replace("Duma ", " ").Replace(" Duma ", " ").Replace(" duma ", " ")
+                .Replace("Dumas ", " ").Replace(" Dumas ", " ").Replace(" dumas ", " ")
 
-                //.Replace("Em ", " ").Replace(" Em ", " ").Replace(" em ", " ")
-                //.Replace("No ", " ").Replace(" No ", " ").Replace(" no ", " ")
-                //.Replace("Nos ", " ").Replace(" Nos ", " ").Replace(" nos ", " ")
-                //.Replace("Na ", " ").Replace(" Na ", " ").Replace(" na ", " ")
-                //.Replace("Nas ", " ").Replace(" Nas ", " ").Replace(" nas ", " ")
-                //.Replace("Num ", " ").Replace(" Num ", " ").Replace(" num ", " ")
-                //.Replace("Nuns ", " ").Replace(" Nuns ", " ").Replace(" nuns ", " ")
-                //.Replace("Numa ", " ").Replace(" Numa ", " ").Replace(" numa ", " ")
-                //.Replace("Numas ", " ").Replace(" Numas ", " ").Replace(" numas ", " ")
+                .Replace("Em ", " ").Replace(" Em ", " ").Replace(" em ", " ")
+                .Replace("No ", " ").Replace(" No ", " ").Replace(" no ", " ")
+                .Replace("Nos ", " ").Replace(" Nos ", " ").Replace(" nos ", " ")
+                .Replace("Na ", " ").Replace(" Na ", " ").Replace(" na ", " ")
+                .Replace("Nas ", " ").Replace(" Nas ", " ").Replace(" nas ", " ")
+                .Replace("Num ", " ").Replace(" Num ", " ").Replace(" num ", " ")
+                .Replace("Nuns ", " ").Replace(" Nuns ", " ").Replace(" nuns ", " ")
+                .Replace("Numa ", " ").Replace(" Numa ", " ").Replace(" numa ", " ")
+                .Replace("Numas ", " ").Replace(" Numas ", " ").Replace(" numas ", " ")
 
-                //.Replace("Por ", " ").Replace(" Por ", " ").Replace(" por ", " ")
-                //.Replace("Per ", " ").Replace(" Per ", " ").Replace(" per ", " ")
-                //.Replace("Pelo ", " ").Replace(" Pelo ", " ").Replace(" pelo ", " ")
-                //.Replace("Pelos ", " ").Replace(" Pelos ", " ").Replace(" pelos ", " ")
-                //.Replace("Pela ", " ").Replace(" Pela ", " ").Replace(" pela ", " ")
-                //.Replace("Pelas ", " ").Replace(" Pelas ", " ").Replace(" pelas ", " ")
+                .Replace("Por ", " ").Replace(" Por ", " ").Replace(" por ", " ")
+                .Replace("Per ", " ").Replace(" Per ", " ").Replace(" per ", " ")
+                .Replace("Pelo ", " ").Replace(" Pelo ", " ").Replace(" pelo ", " ")
+                .Replace("Pelos ", " ").Replace(" Pelos ", " ").Replace(" pelos ", " ")
+                .Replace("Pela ", " ").Replace(" Pela ", " ").Replace(" pela ", " ")
+                .Replace("Pelas ", " ").Replace(" Pelas ", " ").Replace(" pelas ", " ")
 
                 ;
         }
