@@ -1,0 +1,34 @@
+﻿<Properties StartupConfiguration="{82E197F7-22B3-49BC-AFBA-888DDAD778B6}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Demetrios.Repositories/MinutoPostRepository.cs">
+    <Files>
+      <File FileName="Demetrios.Repositories/MinutoPostRepository.cs" Line="75" Column="53" />
+      <File FileName="Demetrios.Repositories/Interfaces/IMinutoPostRepository.cs" />
+      <File FileName="Demetrios.Services/MinutoPostService.cs" />
+      <File FileName="Demetrios.Services/Interfaces/IMinutoPostService.cs" />
+      <File FileName="Demetrios/Controllers/Minutos.cs" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Demetrios" expanded="True" selected="True">
+            <Node name="Demetrios" expanded="True" />
+            <Node name="Demetrios.Repositories" expanded="True">
+              <Node name="Interfaces" expanded="True" />
+            </Node>
+            <Node name="Demetrios.Services" expanded="True">
+              <Node name="Interfaces" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <Debugger.DebugSourceFolders />
+  <MonoDevelop.Ide.ItemProperties.Demetrios PreferredExecutionTarget="/Applications/Safari.app" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
