@@ -17,5 +17,7 @@ namespace Demetrios.Services.Interfaces
         IOrderedQueryable<MinutoPost> GetAllByUserAccountId(string userAccountId);
 
         Task<bool> Delete(string MinutoPostId);
+
+        Task<bool> GetMinutoPostsAndCreate();
     }
 }

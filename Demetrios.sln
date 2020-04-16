@@ -57,13 +57,11 @@ Global
 		$1.DirectoryNamespaceAssociation = PrefixedHierarchical
 		$0.StandardHeader = $2
 		$0.VersionControlPolicy = $3
-		$0.TextStylePolicy = $4
+		$0.TextStylePolicy = $6
 		$4.inheritsSet = null
 		$4.scope = text/x-javascript
-		$0.TextStylePolicy = $5
 		$5.inheritsSet = null
 		$5.scope = text/x-jsts
-		$0.TextStylePolicy = $6
 		$6.inheritsSet = null
 		$6.scope = text/x-json
 		$0.JSONFormattingPolicy = $7

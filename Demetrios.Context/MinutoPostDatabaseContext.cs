@@ -14,7 +14,7 @@ namespace Demetrios.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<MinutoPost>()
-                .HasKey(x => x.Id);
+                .HasKey(x => x.id);
         }
     }
 }

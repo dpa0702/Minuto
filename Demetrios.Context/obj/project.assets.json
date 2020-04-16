@@ -3005,6 +3005,7 @@
         "netcoreapp2.2"
       ],
       "sources": {
+        "C:\\git\\packages": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

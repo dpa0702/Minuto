@@ -9,13 +9,9 @@ namespace Demetrios.Validation
     {
         public MinutoPostValidator()
         {
-            RuleFor(m => m.Nome).NotNull().WithMessage("Nome que descreva o Minuto.");
+            RuleFor(m => m.link).NotNull().WithMessage("Nome que descreva o Minuto.");
 
-            RuleFor(m => m.Canal).NotNull().WithMessage("Tipo de canal de Minuto, podendo ser email, celular ou fixo.");
-
-            RuleFor(m => m.Valor).NotNull().WithMessage("Valor para o canal de Minuto.");
-
-            RuleFor(m => m.Obs).NotNull().WithMessage("Qualquer observação que seja pertinente.");
+            RuleFor(m => m.description).NotNull().WithMessage("Qualquer observação que seja pertinente.");
         }
 
         protected override bool PreValidate(ValidationContext<MinutoPost> context, ValidationResult result)
