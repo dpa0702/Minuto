@@ -110,6 +110,7 @@ namespace Demetrios.Repositories
         public async Task<bool> GetMinutoPostsAndCreate()
         {
             var result = XDocument.Load("https://www.minutoseguros.com.br/blog/feed/")
+            //var result = XDocument.Load(@"C:/Users/5A_PC1/Desktop/teste.xml")
                 .Descendants("item")
                 .Select(i => new
                 {

@@ -85,6 +85,7 @@ namespace Demetrios
         private static void ConfigureEntityFramework(IServiceCollection services)
         {
             var databaseName = Configuration["EntityFramework:DatabaseName"];
+            if (databaseName == null) databaseName = "MinutoPostsDatabase";
 
             services.AddDbContext<MinutoPostDatabaseContext>(options =>
                 options.UseInMemoryDatabase(databaseName));

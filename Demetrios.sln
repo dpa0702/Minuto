@@ -14,6 +14,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demetrios.Models", "Demetri
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demetrios.Validation", "Demetrios.Validation\Demetrios.Validation.csproj", "{2D5012CC-78EB-423C-AB5E-60D4C900C274}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demetrios.Testes", "Demetrios.Testes\Demetrios.Testes.csproj", "{FEB5B28E-D7FC-4168-BB6F-27BEAFD1BACF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,6 +46,10 @@ Global
 		{2D5012CC-78EB-423C-AB5E-60D4C900C274}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2D5012CC-78EB-423C-AB5E-60D4C900C274}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2D5012CC-78EB-423C-AB5E-60D4C900C274}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FEB5B28E-D7FC-4168-BB6F-27BEAFD1BACF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEB5B28E-D7FC-4168-BB6F-27BEAFD1BACF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FEB5B28E-D7FC-4168-BB6F-27BEAFD1BACF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FEB5B28E-D7FC-4168-BB6F-27BEAFD1BACF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
