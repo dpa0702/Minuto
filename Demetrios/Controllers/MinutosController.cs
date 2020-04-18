@@ -60,9 +60,15 @@ namespace Demetrios.Controllers
         {
             for (int a = 0; a < 50; a++)
             {
+                List<PrincipaisPalavras> ListaPrincipaisPalavras = new List<PrincipaisPalavras>();
+                PrincipaisPalavras principaisPalavras = new PrincipaisPalavras();
+                principaisPalavras.descricao = "teste";
+                principaisPalavras.ocorrencias = 0;
+                ListaPrincipaisPalavras.Add(principaisPalavras);
                 MinutoPost MinutoPost = new MinutoPost { id = a.ToString(),
                                                             link = "link" + a.ToString(),
-                                                            description = "description" + a.ToString()
+                                                            description = "description" + a.ToString(),
+                                                            pPalavras = ListaPrincipaisPalavras
                 };
 
                 _MinutoPostService.Create(MinutoPost);
