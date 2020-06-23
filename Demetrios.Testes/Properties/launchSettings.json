@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Demetrios.Testes": {
+      "commandName": "Project"
+    }
+  },
+  "EntityFramework": {
+    "DatabaseName": "MinutoPostsDatabase"
+  }
+}

@@ -19,6 +19,21 @@ namespace Demetrios.Controllers
             this._MinutoPostService = MinutoPostService;
         }
 
+        [HttpGet("GetMinutoPostsAndCreate")]
+        public void GetMinutoPostsAndCreate()
+        {
+            _MinutoPostService.GetMinutoPostsAndCreate();
+        }
+
+        [HttpGet]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public IActionResult GetAll(int? pageNumber, int? pageSize)
+        {
+            var result = _MinutoPostService.GetAll(pageNumber, pageSize);
+
+            return Ok(result);
+        }
+
         [HttpPost("MinutoCreate")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -30,7 +45,7 @@ namespace Demetrios.Controllers
 
                 return CreatedAtAction(
                     nameof(GetAllByUserAccountId), 
-                    new { id = result.Nome }, result);
+                    new { id = result.link }, result);
             }
             else
             {
@@ -45,11 +60,15 @@ namespace Demetrios.Controllers
         {
             for (int a = 0; a < 50; a++)
             {
-                MinutoPost MinutoPost = new MinutoPost { Id = a.ToString(),
-                                                            Nome = "Nome" + a.ToString(),
-                                                            Canal = "Canal" + a.ToString(),
-                                                            Valor = "valor" + a.ToString(),
-                                                            Obs = "Obs" + a.ToString()
+                List<PrincipaisPalavras> ListaPrincipaisPalavras = new List<PrincipaisPalavras>();
+                PrincipaisPalavras principaisPalavras = new PrincipaisPalavras();
+                principaisPalavras.descricao = "teste";
+                principaisPalavras.ocorrencias = 0;
+                ListaPrincipaisPalavras.Add(principaisPalavras);
+                MinutoPost MinutoPost = new MinutoPost { id = a.ToString(),
+                                                            link = "link" + a.ToString(),
+                                                            description = "description" + a.ToString(),
+                                                            pPalavras = ListaPrincipaisPalavras
                 };
 
                 _MinutoPostService.Create(MinutoPost);
@@ -71,15 +90,6 @@ namespace Demetrios.Controllers
             {
                 return BadRequest(errors);
             }
-        }
-
-        [HttpGet]
-        [ProducesResponseType(StatusCodes.Status200OK)]
-        public IActionResult GetAll(int? pageNumber, int? pageSize)
-        {
-            var result = _MinutoPostService.GetAll(pageNumber, pageSize);
-
-            return Ok(result);
         }
 
         [HttpGet("{id}")]
@@ -115,6 +125,8 @@ namespace Demetrios.Controllers
                 return BadRequest();
             }
         }
+
+        
     }
 }
 

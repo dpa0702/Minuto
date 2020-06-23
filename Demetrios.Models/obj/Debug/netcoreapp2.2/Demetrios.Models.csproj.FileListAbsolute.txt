@@ -17,6 +17,7 @@ C:/Users/5A_PC1/Downloads/WebApi/WebApi/Demetrios.Models/obj/Debug/netcoreapp2.2
 C:\git\pessoal\Minuto\Demetrios.Models\bin\Debug\netcoreapp2.2\Demetrios.Models.deps.json
 C:\git\pessoal\Minuto\Demetrios.Models\bin\Debug\netcoreapp2.2\Demetrios.Models.dll
 C:\git\pessoal\Minuto\Demetrios.Models\bin\Debug\netcoreapp2.2\Demetrios.Models.pdb
+C:\git\pessoal\Minuto\Demetrios.Models\obj\Debug\netcoreapp2.2\Demetrios.Models.csprojAssemblyReference.cache
 C:\git\pessoal\Minuto\Demetrios.Models\obj\Debug\netcoreapp2.2\Demetrios.Models.csproj.CoreCompileInputs.cache
 C:\git\pessoal\Minuto\Demetrios.Models\obj\Debug\netcoreapp2.2\Demetrios.Models.AssemblyInfoInputs.cache
 C:\git\pessoal\Minuto\Demetrios.Models\obj\Debug\netcoreapp2.2\Demetrios.Models.AssemblyInfo.cs

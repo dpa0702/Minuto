@@ -67,5 +67,13 @@ namespace Demetrios.Services
 
             return success;
         }
+
+        public async Task<bool> GetMinutoPostsAndCreate()
+        {
+            var success = await _repository.GetMinutoPostsAndCreate();
+
+            return success;
+        }
+        
     }
 }
