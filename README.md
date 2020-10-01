@@ -1,2 +1,2 @@
-# Minuto
+# Minuto Seguros
 Teste Minuto Seguros
